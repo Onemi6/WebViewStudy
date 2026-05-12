@@ -162,9 +162,7 @@ public class ByWebTools {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         } catch (Exception e) {
-            if (BuildConfig.DEBUG) {
-                e.printStackTrace();
-            }
+            e.printStackTrace();
         }
     }
 

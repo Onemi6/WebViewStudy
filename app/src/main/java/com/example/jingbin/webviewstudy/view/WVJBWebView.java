@@ -338,11 +338,11 @@ public class WVJBWebView extends WebView {
             settings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
         }
         settings.setAllowFileAccess(false);
-        settings.setAppCacheEnabled(false);
+//        settings.setAppCacheEnabled(false);
         settings.setCacheMode(WebSettings.LOAD_NO_CACHE);
         settings.setJavaScriptEnabled(true);
         settings.setLoadWithOverviewMode(true);
-        settings.setAppCachePath(APP_CACHE_DIRNAME);
+//        settings.setAppCachePath(APP_CACHE_DIRNAME);
         settings.setUseWideViewPort(true);
         super.setWebChromeClient(mWebChromeClient);
         super.setWebViewClient(mWebViewClient);
@@ -716,13 +716,13 @@ public class WVJBWebView extends WebView {
             }
         }
 
-        @Override
-        public void onReachedMaxAppCacheSize(long requiredStorage, long quota, WebStorage.QuotaUpdater quotaUpdater) {
-            if (webChromeClient != null) {
-                webChromeClient.onReachedMaxAppCacheSize(requiredStorage, quota, quotaUpdater);
-            }
-            super.onReachedMaxAppCacheSize(requiredStorage, quota, quotaUpdater);
-        }
+//        @Override
+//        public void onReachedMaxAppCacheSize(long requiredStorage, long quota, WebStorage.QuotaUpdater quotaUpdater) {
+//            if (webChromeClient != null) {
+//                webChromeClient.onReachedMaxAppCacheSize(requiredStorage, quota, quotaUpdater);
+//            }
+//            super.onReachedMaxAppCacheSize(requiredStorage, quota, quotaUpdater);
+//        }
 
         @Override
         public void onGeolocationPermissionsShowPrompt(String origin, GeolocationPermissions.Callback callback) {

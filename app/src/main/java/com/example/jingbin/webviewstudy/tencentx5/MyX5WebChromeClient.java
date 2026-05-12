@@ -185,7 +185,7 @@ public class MyX5WebChromeClient extends com.tencent.smtt.sdk.WebChromeClient {
     @Override
     public Bitmap getDefaultVideoPoster() {
         if (super.getDefaultVideoPoster() == null) {
-            return BitmapFactory.decodeResource(mActivity.getResources(), R.drawable.by_icon_video);
+            return BitmapFactory.decodeResource(mActivity.getResources(), me.jingbin.web.R.drawable.by_icon_video);
         } else {
             return super.getDefaultVideoPoster();
         }

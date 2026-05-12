@@ -1,16 +1,32 @@
-apply plugin: 'com.android.library'
+//apply plugin: 'com.android.library'
+//apply plugin: 'com.github.dcendents.android-maven'
+//group = 'com.github.youlookwhat'
+plugins {
+    id 'com.android.library'
+    id 'maven-publish'
+}
 
-apply plugin: 'com.github.dcendents.android-maven'
-group = 'com.github.youlookwhat'
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+//                from components.release
+                from components.findByName('release')
+                groupId = 'me.jingbin.web'
+                artifactId = 'ByWebView'
+                version = '1.2.2'
+            }
+        }
+    }
+}
 
 android {
-    compileSdkVersion 31
+    namespace 'me.jingbin.web'
+    compileSdk 34
 
     defaultConfig {
-        minSdkVersion 14
-        targetSdkVersion 31
-        versionCode 1
-        versionName "1.0"
+        minSdk 14
+        targetSdk 34
 
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
 

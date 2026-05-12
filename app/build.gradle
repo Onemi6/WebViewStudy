@@ -1,14 +1,15 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 31
+    namespace 'com.example.jingbin.webviewstudy'
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.jingbin.webviewstudy"
-        minSdkVersion 14
-        targetSdkVersion 31
-        versionCode 16
-        versionName "3.4.0"
+        minSdk 21
+        targetSdk 34
+        versionCode 17
+        versionName "3.4.1"
         multiDexEnabled true
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
         // tencent x5
@@ -37,6 +38,24 @@ android {
             keyPassword "webview2018"
         }
     }
+//    publishing {
+//        singleVariant('release') {
+//            withSourcesJar()
+//        }
+//    }
+    lintOptions {
+        abortOnError false
+    }
+
+    buildFeatures {
+//        dataBinding = true
+        buildConfig = true
+    }
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_17
+        sourceCompatibility JavaVersion.VERSION_17
+    }
+
 }
 
 dependencies {
